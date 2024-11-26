@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Velú</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/checkout.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    
+</head>
+<body>
+    <header class="checkout-header">
+        <div class="logo">
+            <a href="/velu-frontend/pages/index.html">
+                <img src="../../assets/img/logo.png" alt="Velú">
+            </a>
+        </div>
+        <div class="checkout-steps">
+            <div class="step active" data-step="1">
+                <span class="step-number">1</span>
+                <span class="step-text">Datos de envío</span>
+            </div>
+            <div class="step" data-step="2">
+                <span class="step-number">2</span>
+                <span class="step-text">Pago</span>
+            </div>
+            <div class="step" data-step="3">
+                <span class="step-number">3</span>
+                <span class="step-text">Confirmación</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-container">
+        <section class="checkout-section shipping-section active" data-section="1">
+            <div class="section-content">
+                <h2>Información de envío</h2>
+                <form id="shipping-form" class="checkout-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="documento">Documento de identidad</label>
+                            <input type="text" id="documento" name="documento" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="complemento">Complemento (Opcional)</label>
+                        <input type="text" id="complemento" name="complemento">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departamento">Departamento</label>
+                            <select id="departamento" name="departamento" required>
+                                <option value="" selected disabled>Selecciona un departamento...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="municipio">Ciudad</label>
+                            <input type="text" id="municipio" name="municipio" list="municipios-list" autocomplete="off" required>
+                            <datalist id="municipios-list"></datalist>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="codigo_postal">Código Postal</label>
+                        <input type="text" id="codigo_postal" name="codigo_postal" required>
+                    </div>
+                    <button type="button" id="continue-payment" class="primary-button">Continuar al pago</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="checkout-section payment-section" data-section="2">
+            <div class="section-content">
+                <h2>Método de pago</h2>
+                <div class="payment-options">
+                    <div id="loading-payment">Cargando opciones de pago...</div>
+                    <div id="mercadopago-button"></div>
+                    <div id="payment-status"></div>
+                </div>
+                <button class="secondary-button back-button">Volver</button>
+            </div>
+        </section>
+
+        <section class="checkout-section confirmation-section" data-section="3">
+            <div class="section-content">
+                <div class="confirmation-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>¡Pedido confirmado!</h2>
+                    <p>Gracias por tu compra. </p>
+                    <div class="order-details">
+                    </div>
+                    <a href="/velu-frontend/pages/index.html" class="primary-button">Volver al inicio</a>
+                </div>
+            </div>
+        </section>
+
+        <aside class="order-summary">
+            <h3>Resumen del pedido</h3>
+            <div class="cart-items items-container">
+            </div>
+            <div class="summary-totals">
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span class="amount">$0</span>
+                </div>
+                <div class="shipping">
+                    <span>Envío</span>
+                    <span class="amount">$0</span>
+                </div>
+                <div class="total">
+                    <span>Total</span>
+                    <span class="amount">$0</span>
+                </div>
+            </div>
+            <div class="order-notes">
+                <p class="shipping-note">Envío gratis en compras superiores a $250.000</p>
+                <p class="security-note">
+                    <i class="fas fa-lock"></i>
+                    Pago seguro procesado por MercadoPago
+                </p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="checkout-footer">
+        <p>© 2024 Velú - Tu estilo, tu vela | Todos los derechos reservados</p>
+        <div class="footer-links">
+            <a href="/politicas/privacidad.html">Política de privacidad</a>
+            <a href="/politicas/terminos.html">Términos y condiciones</a>
+        </div>
+    </footer>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script type="module" src="/velu-frontend/assets/js/services/locationData.js"></script>
+    <script type="module" src="/velu-frontend/assets/js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velú: tu estilo, tu vela</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    
+    <script src="/velu-frontend/assets/js/carousel.js"></script>
+    <script src="/velu-frontend/assets/js/main.js"></script>
+    <script src="/velu-frontend/assets/js/cart.js"></script>
+
+</head>
+<body>
+    
+    <header class="main-header">
+        <div class="logo">
+            <img src="../assets/img/logo.png" alt="Velú">
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/velu-frontend/pages/index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="/velu-frontend/pages/productos/todos.html">Productos</a>
+                    <div class="dropdown-content">
+                        <a href="/velu-frontend/pages/productos/velas-aromaticas.html">Velas Aromáticas</a>
+                        <a href="/velu-frontend/pages/productos/velas-no-aromaticas.html">Velas No Aromáticas</a>
+                        <a href="/velu-frontend/pages/productos/aromatizadores.html">Aromatizadores</a>
+                        <a href="/velu-frontend/pages/productos/inciensos.html">Inciensos</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/velu-frontend/pages/home-deco/hd-todos.html">Home & Deco</a>
+                    <div class="dropdown-content">
+                        <a href="/velu-frontend/pages/home-deco/faroles.html">Faroles</a>
+                        <a href="/velu-frontend/pages/home-deco/portavelas.html">Portavelas</a>
+                        <a href="/velu-frontend/pages/home-deco/candelabros.html">Candelabros</a>
+                        <a href="/velu-frontend/pages/home-deco/bases-bandejas.html">Bases y Bandejas</a>
+                    </div>
+                </li>
+                <li><a href="/velu-frontend/pages/contacto.html">Contacto</a></li>
+                <li><a href="/velu-frontend/pages/nuestra-historia.html">Nuestra Historia</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            <a href="/velu-frontend/pages/carrito.html" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="/velu-frontend/pages/cuenta/login.html" class="account-btn">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="carousel">
+        <div class="carousel-items">
+            <div class="carousel-item active">
+                <img src="../assets/img/banner1.jpg" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/img/banner2.jpg" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/img/banner3.jpg" alt="Banner 3">
+            </div>
+        </div>
+        <button class="carousel-prev">&lt;</button>
+        <button class="carousel-next">&gt;</button>
+        <div class="carousel-dots"></div>
+    </div>
+
+    <section class="featured-categories">
+        <h2>CATEGORIAS DESTACADAS</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="../assets/img/aromatizadores-textiles.png" alt="Aromatizadores Textiles">
+                <a href="/velu-frontend/pages/productos/aromatizadores.html" class="category-link">
+                    AROMATIZADORES TEXTILES
+                    <span class="arrow">›</span>
+                </a>
+            </div>
+            <div class="category-card">
+                <img src="../assets/img/portavelas.jpg" alt="Portavelas">
+                <a href="/velu-frontend/pages/home-deco/portavelas.html" class="category-link">
+                    PORTAVELAS
+                    <span class="arrow">›</span>
+                </a>
+            </div>
+            <div class="category-card">
+                <img src="../assets/img/velas-aromaticas.jpg" alt="Velas Aromáticas">
+                <a href="/velu-frontend/pages/productos/velas-aromaticas.html" class="category-link">
+                    VELAS AROMÁTICAS
+                    <span class="arrow">›</span>
+                </a>
+            </div>
+            <div class="category-card">
+                <img src="../assets/img/bases-bandejas.jpg" alt="Bases y Bandejas">
+                <a href="/velu-frontend/pages/home-deco/bases-bandejas.html" class="category-link">
+                    BASES Y BANDEJAS
+                    <span class="arrow">›</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="promo-banners">
+        <div class="banner">
+            <div class="banner-content">
+                <span class="banner-tag">CONÓCENOS</span>
+                <h2>NUESTRA HISTORIA</h2>
+                <p>CONOCE MÁS SOBRE NOSOTROS</p>
+                <a href="/velu-frontend/pages/nuestra-historia.html" class="banner-btn">Ver más</a>
+            </div>
+            <img src="../assets/img/equipo-publicidad.jpg" alt="Nuestra historia">
+        </div>
+        <div class="banner">
+            <div class="banner-content">
+                <span class="banner-tag">DECORA TUS ESPACIOS</span>
+                <h2>HOME & DECO<br></h2>
+                <a href="/velu-frontend/pages/home-deco/hd-todos.html" class="banner-btn">Ver más</a>
+            </div>
+            <img src="../assets/img/vela-publicidad.jpg" alt="Home & Deco">
+        </div>
+    </section>
+
+    <section class="shipping-info">
+        <div class="info-card">
+            <h3>Tiempos de envío</h3>
+            <p>Entrega en Bogotá de 1 a 2 días hábiles, en ciudades principales de 3 a 5 días hábiles, y en ciudades remotas de 5 a 7 días hábiles.</p>
+        </div>
+        <div class="info-card">
+            <h3>Cambios y devoluciones</h3>
+            <p>Compra con tranquilidad, tienes hasta 30 días a partir de la fecha de recepción de tu pedido para solicitar un cambio o devolución.</p>
+        </div>
+        <div class="info-card">
+            <h3>Costo de envío</h3>
+            <p>Envío gratuito por compras superiores a $250.000 COP, para compras inferiores a este monto, el costo de envío es de $12.000 para Bogotá y $15.000 para el resto del país.</p>
+        </div>
+        <div class="info-card">
+            <h3>Pagos Seguros</h3>
+            <p>Para garantizar la protección de tus datos financieros y procesar tus compras de forma segura, utilizamos proveedores de pago confiables como Mercado Pago.</p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="/velu-frontend/pages/calidad.html">Cuidado del Producto</a></li>
+                    <li><a href="/velu-frontend/pages/politicas/privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="/velu-frontend/pages/politicas//envios.html">Política de Envíos</a></li>
+                    <li><a href="/velu-frontend/pages/politicas//terminos.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Productos</h3>
+                <ul>
+                    <li><a href="/velu-frontend/pages/productos/velas-aromaticas.html">Velas Aromáticas</a></li>
+                    <li><a href="/velu-frontend/pages/productos/velas-no-aromaticas.html">Velas No Aromáticas</a></li>
+                    <li><a href="/velu-frontend/pages/productos/aromatizadores.html">Aromatizadores</a></li>
+                    <li><a href="/velu-frontend/pages/productos/inciensos.html">Inciensos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Home & Deco</h3>
+                <ul>
+                    <li><a href="/velu-frontend/pages/home-deco/faroles.html">Faroles</a></li>
+                    <li><a href="/velu-frontend/pages/home-deco/portavelas.html">Portavelas</a></li>
+                    <li><a href="/velu-frontend/pages/home-deco/candelabros.html">Candelabros</a></li>
+                    <li><a href="/velu-frontend/pages/home-deco/bases-bandejas.html">Bases y Bandejas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Síguenos en</h3>
+                <div class="social-links">
+                    <a href="https://instagram.com/velu" target="_blank" class="social-link">
+                        <img src="../assets/img/instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="https://facebook.com/velu" target="_blank" class="social-link">
+                        <img src="../assets/img/facebook.svg" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Velú - Tu estilo, tu vela.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/carousel.js"></script>
+</body>
+</html>

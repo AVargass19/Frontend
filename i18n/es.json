@@ -1,0 +1,37 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "products": "Productos",
+        "contact": "Contacto",
+        "cart": "Carrito",
+        "account": "Mi Cuenta"
+    },
+    "products": {
+        "addToCart": "Agregar al Carrito",
+        "outOfStock": "Agotado",
+        "categories": {
+            "scented": "Velas Aromáticas",
+            "unscented": "Velas No Aromáticas",
+            "diffusers": "Aromatizadores",
+            "incense": "Inciensos"
+        }
+    },
+    "cart": {
+        "empty": "Tu carrito está vacío",
+        "total": "Total",
+        "checkout": "Finalizar Compra"
+    },
+    "account": {
+        "login": "Iniciar Sesión",
+        "register": "Registrarse",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "name": "Nombre",
+        "lastname": "Apellido"
+    },
+    "checkout": {
+        "address": "Dirección de envío",
+        "payment": "Método de pago",
+        "summary": "Resumen de compra"
+    }
+}

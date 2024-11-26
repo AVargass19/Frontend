@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Velú</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/cuenta/login.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="auth-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo-link">
+                    <img src="../../assets/img/isotipoVelu.png" alt="Velú" class="auth-logo">
+                </a>
+                <h1 class="auth-welcome">¡Bienvenido a Velú!</h1>
+                <p class="auth-subtitle">Tu estilo, tu vela</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="auth-container">
+            <h1 class="auth-title">Iniciar Sesión</h1>
+            
+            <div class="error-message" id="error-message"></div>
+            
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">Iniciar Sesión</button>
+            </form>
+            
+            <div class="auth-links">
+                <p>¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="checkout-footer">
+        <p>© 2024 Velú - Tu estilo, tu vela | Todos los derechos reservados</p>
+        <div class="footer-links">
+            <a href="/politicas/privacidad.html">Política de privacidad</a>
+            <a href="/politicas/terminos.html">Términos y condiciones</a>
+        </div>
+    </footer>
+    <script type="module" src="/velu-frontend/assets/js/login.js"></script>
+</body>
+</html>

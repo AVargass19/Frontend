@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velas No Aromáticas - Velú</title>
+    <meta name="description" content="Descubre nuestra colección de velas no aromáticas. Diseños elegantes para decorar tus espacios.">
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/productos.css">
+    <link rel="stylesheet" href="../../assets/css/categorias/velas-aromaticas.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="/velu-frontend/assets/img/logo.png" alt="Velú">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/velu-frontend/pages/index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="/velu-frontend/pages/productos/todos.html">Productos</a>
+                    <div class="dropdown-content">
+                        <a href="/velu-frontend/pages/productos/velas-aromaticas.html">Velas Aromáticas</a>
+                        <a href="/velu-frontend/pages/productos/velas-no-aromaticas.html">Velas No Aromáticas</a>
+                        <a href="/velu-frontend/pages/productos/aromatizadores.html">Aromatizadores</a>
+                        <a href="/velu-frontend/pages/productos/inciensos.html">Inciensos</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/velu-frontend/pages/home-deco/hd-todos.html">Home & Deco</a>
+                    <div class="dropdown-content">
+                        <a href="/velu-frontend/pages/home-deco/faroles.html">Faroles</a>
+                        <a href="/velu-frontend/pages/home-deco/portavelas.html">Portavelas</a>
+                        <a href="/velu-frontend/pages/home-deco/candelabros.html">Candelabros</a>
+                        <a href="/velu-frontend/pages/home-deco/bases-bandejas.html">Bases y Bandejas</a>
+                    </div>
+                </li>
+                <li><a href="/velu-frontend/pages/contacto.html">Contacto</a></li>
+                <li><a href="/velu-frontend/pages/nuestra-historia.html">Nuestra Historia</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            <a href="/velu-frontend/pages/carrito.html" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="/velu-frontend/pages/cuenta/login.html" class="account-btn">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="products-page">
+        <nav class="breadcrumbs">
+            <ul>
+                <li><a href="/velu-frontend/pages/index.html">Inicio</a></li>
+                <li><span class="separator">/</span></li>
+                <li><a href="/velu-frontend/pages/productos/todos.html">Productos</a></li>
+                <li><span class="separator">/</span></li>
+                <li class="current-page">Velas No Aromáticas</li>
+            </ul>
+        </nav>
+
+        <div class="category-header">
+            <h1>Velas No Aromáticas</h1>
+            <p class="category-description">
+                Descubre nuestra colección de velas no aromáticas artesanales, elaboradas con cera de soja. Cada vela está diseñada para crear una experiencia sensorial única y transformar cualquier 
+                espacio en un ambiente acogedor.
+            </p>
+        </div>
+
+        <div class="products-layout">
+            <aside class="filters-sidebar">
+                <div class="filters-header">
+                    <h3>Filtros</h3>
+                    <button class="clear-filters">Limpiar filtros</button>
+                </div>
+                
+                <div class="filters-content">
+                    <form id="filters-form">
+                        <div class="filter-section">
+                            <h4>Tamaño</h4>
+                            <div class="filter-options">
+                                <label>
+                                    <input type="checkbox" name="size" value="small">
+                                    Pequeña (100g)
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="size" value="medium">
+                                    Mediana (200g)
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="size" value="large">
+                                    Grande (300g)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h4>Precio</h4>
+                            <div class="price-range">
+                                <div id="price-slider"></div>
+                                <div class="price-inputs">
+                                    <div class="price-input">
+                                        <span>$</span>
+                                        <input type="number" id="min-price" name="minPrice">
+                                    </div>
+                                    <div class="price-input">
+                                        <span>$</span>
+                                        <input type="number" id="max-price" name="maxPrice">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+
+            <section class="products-main">
+                <div class="products-header">
+                    <div class="products-count">
+                    </div>
+                    
+                    <div class="products-sort">
+                        <select id="sort-select" class="sort-dropdown">
+                            <option value="relevance">Relevancia</option>
+                            <option value="price_asc">Menor precio</option>
+                            <option value="price_desc">Mayor precio</option>
+                            <option value="name_asc">A-Z</option>
+                            <option value="name_desc">Z-A</option>
+                        </select>
+                        
+                        <div class="view-options">
+                            <button class="view-option grid active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-option list" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="products-container">
+                </div>
+
+                <div class="pagination">
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="/velu-frontend/pages/calidad.html">Cuidado del Producto</a></li>
+                    <li><a href="/velu-frontend/pages/politicas/privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="/velu-frontend/pages/politicas//envios.html">Política de Envíos</a></li>
+                    <li><a href="/velu-frontend/pages/politicas//terminos.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Productos</h3>
+                <ul>
+                    <li><a href="/velu-frontend/pages/productos/velas-aromaticas.html">Velas Aromáticas</a></li>
+                    <li><a href="/velu-frontend/pages/productos/velas-no-aromaticas.html">Velas No Aromáticas</a></li>
+                    <li><a href="/velu-frontend/pages/productos/aromatizadores.html">Aromatizadores</a></li>
+                    <li><a href="/velu-frontend/pages/productos/inciensos.html">Inciensos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Home & Deco</h3>
+                <ul>
+                    <li><a href="/velu-frontend/pages/home-deco/faroles.html">Faroles</a></li>
+                    <li><a href="/velu-frontend/pages/home-deco/portavelas.html">Portavelas</a></li>
+                    <li><a href="/velu-frontend/pages/home-deco/candelabros.html">Candelabros</a></li>
+                    <li><a href="/velu-frontend/pages/home-deco/bases-bandejas.html">Bases y Bandejas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Síguenos en</h3>
+                <div class="social-links">
+                    <a href="https://instagram.com/velu" target="_blank" class="social-link">
+                        <img src="/velu-frontend/assets/img/instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="https://facebook.com/velu" target="_blank" class="social-link">
+                        <img src="/velu-frontend/assets/img/facebook.svg" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Velú - Tu estilo, tu vela.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { ProductController } from '../../assets/js/controllers/productController.js';
+        
+        new ProductController('velas-aromaticas');
+    </script>
+</body>
+</html>

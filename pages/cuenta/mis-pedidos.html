@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Pedidos - Velú</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/cuenta/login.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/checkout.css">
+    <link rel="stylesheet" href="../../assets/css/cuenta/mis-pedidos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="auth-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo-link">
+                    <img src="../../assets/img/isotipoVelu.png" alt="Velú" class="auth-logo">
+                </a>
+                <h1 class="auth-welcome">Mis Pedidos</h1>
+                <p class="auth-subtitle">Historial de tus compras</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="auth-container" style="max-width: 800px;">
+            <h1 class="auth-title">Historial de Pedidos</h1>
+            
+            <div class="orders-list" id="orders-list">
+                <div class="order-item">
+                    <div class="order-header">
+                        <strong>Pedido #12345</strong>
+                        <span class="order-status status-completed">Completado</span>
+                    </div>
+                    <div class="order-details">
+                        <div>
+                            <p>Fecha: 15/03/2024</p>
+                            <p>Total: $150.00</p>
+                        </div>
+                        <div>
+                            <p>Productos: 3</p>
+                            <p>Envío: Express</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="auth-links">
+                <p><a href="mi-cuenta.html">Volver a mi cuenta</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="checkout-footer">
+        <p>© 2024 Velú - Tu estilo, tu vela | Todos los derechos reservados</p>
+        <div class="footer-links">
+            <a href="/politicas/privacidad.html">Política de privacidad</a>
+            <a href="/politicas/terminos.html">Términos y condiciones</a>
+        </div>
+    </footer>
+    <script type="module" src="/velu-frontend/assets/js/mis-pedidos.js"></script>
+</body>
+</html>

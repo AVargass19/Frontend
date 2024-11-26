@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - Velú Admin</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin/users.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+</head>
+<body class="admin-panel">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="../../assets/img/logo.png" alt="Velú Admin" class="admin-logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span data-i18n="admin.dashboard">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="productos.html">
+                        <i class="fas fa-box"></i>
+                        <span data-i18n="admin.products">Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pedidos.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span data-i18n="admin.orders">Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html" class="active">
+                        <i class="fas fa-users"></i>
+                        <span data-i18n="admin.users">Usuarios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categorias.html">
+                        <i class="fas fa-tags"></i>
+                        <span data-i18n="admin.categories">Categorías</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Gestión de Usuarios</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-menu">
+                    <img src="../../assets/img/admin-avatar.png" alt="Admin" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">Admin</span>
+                        <button class="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Cerrar sesión
+                        </button>
+                    </div>
+            </div>
+        </header>
+
+        <div class="users-content">
+            <div class="users-header">
+                <div class="search-filters">
+                    <div class="search-box">
+                        <input type="text" 
+                            id="searchUsers" 
+                            placeholder="Buscar usuarios..."
+                            data-i18n="admin.users.searchPlaceholder">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="filters">
+                        <select id="roleFilter">
+                            <option value="" data-i18n="admin.users.allRoles">Todos los roles</option>
+                            <option value="ROLE_ADMIN" data-i18n="admin.users.roles.ROLE_ADMIN">Administrador</option>
+                            <option value="ROLE_CLIENTE" data-i18n="admin.users.roles.ROLE_CLIENTE">Cliente</option>
+                        </select>
+                        <select id="statusFilter">
+                            <option value="" data-i18n="admin.users.allStatuses">Todos los estados</option>
+                            <option value="active" data-i18n="admin.users.active">Activo</option>
+                            <option value="inactive" data-i18n="admin.users.inactive">Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="users-table-container">
+                <table id="usersTable" class="admin-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="admin.users.id">ID</th>
+                            <th data-i18n="admin.users.user">Usuario</th>
+                            <th data-i18n="admin.users.role">Rol</th>
+                            <th data-i18n="admin.users.createdAt">Fecha de registro</th>
+                            <th data-i18n="admin.users.status">Estado</th>
+                            <th data-i18n="admin.users.actions">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+            </div>
+        </div>
+    </main>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="admin.users.userDetails">Detalles del Usuario</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="nombre" data-i18n="admin.users.firstName">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido" data-i18n="admin.users.lastName">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="admin.users.email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rol" data-i18n="admin.users.role">Rol</label>
+                        <select id="rol" name="rol" required>
+                            <option value="ROLE_ADMIN">Administrador</option>
+                            <option value="ROLE_CLIENTE">Cliente</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="activo" name="activo">
+                            <span data-i18n="admin.users.active">Usuario activo</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" data-i18n="admin.common.cancel">Cancelar</button>
+                <button class="btn-save" data-i18n="admin.common.save">Guardar</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../../assets/js/admin/usuarios.js"></script>
+</body>
+</html>

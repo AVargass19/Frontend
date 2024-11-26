@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Velú</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="/velu-frontend/assets/css/admin/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+
+</head>
+<body class="admin-panel">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="../../assets/img/logo.png" alt="Velú Admin" class="admin-logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html" class="active">
+                        <i class="fas fa-home"></i>
+                        <span data-i18n="admin.dashboard">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="productos.html">
+                        <i class="fas fa-box"></i>
+                        <span data-i18n="admin.products">Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pedidos.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span data-i18n="admin.orders">Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <i class="fas fa-users"></i>
+                        <span data-i18n="admin.users">Usuarios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categorias.html">
+                        <i class="fas fa-tags"></i>
+                        <span data-i18n="admin.categories">Categorías</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 data-i18n="admin.dashboard">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="notifications-wrapper">
+                    <button class="notification-btn" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">0</span>
+                    </button>
+                    <div class="user-menu">
+                        <img src="../../assets/img/admin-avatar.png" alt="Admin" class="user-avatar">
+                        <div class="user-info">
+                            <span class="user-name">Admin</span>
+                            <button class="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar sesión
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3 data-i18n="admin.totalSales">Ventas Totales</h3>
+                        <p class="card-value">$0</p>
+                        <span class="card-trend positive">+15%</span>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3 data-i18n="admin.activeUsers">Usuarios Activos</h3>
+                        <p class="card-value">0</p>
+                        <span class="card-trend positive">+5%</span>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3 data-i18n="admin.lowStock">Stock Bajo</h3>
+                        <p class="card-value">0</p>
+                        <span class="card-trend negative">+3</span>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3 data-i18n="admin.pendingOrders">Pedidos Pendientes</h3>
+                        <p class="card-value">0</p>
+                        <span class="card-trend neutral">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-charts">
+                <div class="chart-container">
+                    <h3 data-i18n="admin.salesChart">Ventas por Período</h3>
+                    <div class="chart" id="salesChart"></div>
+                </div>
+                <div class="chart-container">
+                    <h3 data-i18n="admin.productChart">Productos más Vendidos</h3>
+                    <div class="chart" id="productsChart"></div>
+                </div>
+            </div>
+
+            <div class="dashboard-tables">
+                <div class="recent-orders">
+                    <h3 data-i18n="admin.recentOrders">Pedidos Recientes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-i18n="admin.orderId">ID</th>
+                                <th data-i18n="admin.customer">Cliente</th>
+                                <th data-i18n="admin.amount">Monto</th>
+                                <th data-i18n="admin.status">Estado</th>
+                                <th data-i18n="admin.actions">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentOrdersTable">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="low-stock-products">
+                    <h3 data-i18n="admin.lowStockProducts">Productos con Stock Bajo</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-i18n="admin.productId">ID</th>
+                                <th data-i18n="admin.productName">Producto</th>
+                                <th data-i18n="admin.currentStock">Stock Actual</th>
+                                <th data-i18n="admin.actions">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lowStockTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="../../assets/js/admin/dashboard.js"></script>
+</body>
+</html>

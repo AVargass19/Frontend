@@ -1,0 +1,135 @@
+.category-header {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                        url('../../assets/img/categories/velas-aromaticas-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    border-radius: 0;
+}
+
+.category-header h1 {
+    font-size: 3rem; 
+    margin-bottom: 1rem;
+    font-family: 'Helvetica Now', sans-serif;
+    color: var(--primary-color); 
+    font-weight: 900; 
+    text-transform: uppercase; 
+}
+
+.category-description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.filter-section {
+    margin-bottom: 2rem;
+}
+
+.filter-section h4 {
+    font-family: 'Radio Grotesk', sans-serif;
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.filter-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.filter-options input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 50%; 
+    margin: 0;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+.filter-options input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.filter-options input[type="checkbox"]:checked::before {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+}
+
+.size-option {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem;
+    transition: all 0.2s;
+}
+
+.size-option label {
+    flex: 1;
+}
+
+.price-range {
+    padding: 0 10px;
+    margin-top: 1.5rem;
+}
+
+.price-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.price-input {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 45%;
+}
+
+.price-input span {
+    color: #666;
+    margin-right: 0.3rem;
+}
+
+.price-input input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.clear-filters {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.clear-filters:hover {
+    color: #a52622;
+}
+

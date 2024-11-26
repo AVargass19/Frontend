@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - Velú Admin</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin/productos.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/admin/categories.css">
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+</head>
+<body class="admin-panel">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="../../assets/img/logo.png" alt="Velú" class="admin-logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="productos.html">
+                        <i class="fas fa-box"></i>
+                        <span>Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pedidos.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <i class="fas fa-users"></i>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categorias.html"  class="active">
+                        <i class="fas fa-tags"></i>
+                        <span>Categorías</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="header-title">
+                        <h1><i class="fas fa-tags text-primary"></i> Categorías</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="categories-container">
+            <div class="category-group">
+                <h2 class="category-parent">Productos</h2>
+                <ul class="subcategories-list">
+                    <li class="subcategory-item">
+                        <span>Velas Aromáticas</span>
+                        <span class="product-count">0</span>
+                    </li>
+                    <li class="subcategory-item">
+                        <span>Velas No Aromáticas</span>
+                        <span class="product-count">0</span>
+                    </li>
+                    <li class="subcategory-item">
+                        <span>Aromatizadores</span>
+                        <span class="product-count">0</span>
+                    </li>
+                    <li class="subcategory-item">
+                        <span>Inciensos</span>
+                        <span class="product-count">0</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="category-group">
+                <h2 class="category-parent">Home & Deco</h2>
+                <ul class="subcategories-list">
+                    <li class="subcategory-item">
+                        <span>Faroles</span>
+                        <span class="product-count">0</span>
+                    </li>
+                    <li class="subcategory-item">
+                        <span>Portavelas</span>
+                        <span class="product-count">0</span>
+                    </li>
+                    <li class="subcategory-item">
+                        <span>Candelabros</span>
+                        <span class="product-count">0</span>
+                    </li>
+                    <li class="subcategory-item">
+                        <span>Bases y Bandejas</span>
+                        <span class="product-count">0</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="../../assets/js/admin/categorie.js"></script>
+</body>
+</html>

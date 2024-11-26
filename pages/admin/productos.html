@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - Velú Admin</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin/productos.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+</head>
+
+<body class="admin-panel">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="../../assets/img/logo.png" alt="Velú" class="admin-logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="productos.html" class="active">
+                        <i class="fas fa-box"></i>
+                        <span>Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pedidos.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <i class="fas fa-users"></i>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categorias.html">
+                        <i class="fas fa-tags"></i>
+                        <span>Categorías</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-main">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="header-title">
+                        <h1><i class="fas fa-box text-primary"></i> Productos</h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-filters">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar productos..." id="searchProducts">
+                    </div>
+                </div>
+                <div class="filters-container">
+                    <select class="filter-select">
+                        <option value="">Todas las categorías</option>
+                        <option value="velas-aromaticas">Velas Aromáticas</option>
+                        <option value="velas-no-aromaticas">Velas No Aromáticas</option>
+                        <option value="aromatizadores">Aromatizadores</option>
+                        <option value="inciensos">Inciensos</option>
+                    </select>
+                    <select class="filter-select">
+                        <option value="">Stock</option>
+                        <option value="bajo">Stock Bajo</option>
+                        <option value="sin">Sin Stock</option>
+                        <option value="disponible">Disponible</option>
+                    </select>
+                    <select class="filter-select">
+                        <option value="">Ordenar por</option>
+                        <option value="nombre_asc">Nombre A-Z</option>
+                        <option value="nombre_desc">Nombre Z-A</option>
+                        <option value="precio_asc">Menor precio</option>
+                        <option value="precio_desc">Mayor precio</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div class="header-right">
+            <button class="add-button">
+                <i class="fas fa-plus"></i>
+                Nuevo Producto
+            </button>
+        </div>
+
+        <div class="products-grid">
+        </div>
+
+        <div class="modal" id="productModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Producto</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Precio</label>
+                                <input type="number" name="precio" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Stock</label>
+                                <input type="number" name="stock" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <textarea name="descripcion" rows="3"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Categoría</label>
+                                <select name="categoria" required>
+                                    <option value="">Seleccionar...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Estado</label>
+                                <select name="activo">
+                                    <option value="true">Activo</option>
+                                    <option value="false">Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Imágenes</label>
+                            <div class="image-upload-area">
+                                <input type="file" multiple accept="image/*">
+                                <div class="upload-message">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Arrastra imágenes aquí o haz clic para seleccionar</p>
+                                </div>
+                            </div>
+                            <div class="image-preview">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-cancel">Cancelar</button>
+                    <button class="btn-save">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="../../assets/js/admin/productos.js"></script>
+</body>
+</html>

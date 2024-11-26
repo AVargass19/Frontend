@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos - Velú Admin</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/admin/pedidos.css">
+    <link rel="stylesheet" href="../../assets/css/admin/productos.css">
+    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../../assets/css/admin/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-now" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/radio-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/futura-pt" rel="stylesheet">
+</head>
+<body class="admin-panel">
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <img src="../../assets/img/logo.png" alt="Velú Admin" class="admin-logo">
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span data-i18n="admin.dashboard">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="productos.html">
+                        <i class="fas fa-box"></i>
+                        <span data-i18n="admin.products">Productos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pedidos.html" class="active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span data-i18n="admin.orders">Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <i class="fas fa-users"></i>
+                        <span data-i18n="admin.users">Usuarios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="categorias.html">
+                        <i class="fas fa-tags"></i>
+                        <span data-i18n="admin.categories">Categorías</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="header-title">
+                        <h1><i class="fas fa-shopping-cart text-primary" style="color: #c6302c;"></i> Pedidos</h1>
+                    </div>
+                    <div class="header-right">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchOrders" placeholder="Buscar pedido...">
+                        </div>
+                        <select id="statusFilter" class="filter-select">
+                            <option value="">Todos los estados</option>
+                            <option value="PENDIENTE">Pendiente</option>
+                            <option value="CONFIRMADO">Confirmado</option>
+                            <option value="ENVIADO">Enviado</option>
+                            <option value="ENTREGADO">Entregado</option>
+                            <option value="CANCELADO">Cancelado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="orders-container">
+            <table id="ordersTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Total</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script type="module">
+        import { orderManager } from '../../assets/js/services/orderManagement.js';
+    </script>
+</body>
+</html>
